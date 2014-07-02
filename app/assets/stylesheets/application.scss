@@ -27,6 +27,12 @@ html {
   clear: both;
 }
 
+.timer-links {
+  a {
+    margin: 1%;
+  }
+}
+
 .timer {
   margin-top: 5%;
 }
@@ -38,6 +44,15 @@ html {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   border-radius: 4px;
   margin: 2%;
+}
+
+.chess {
+  float: right;
+  min-width: 45%;
+}
+
+.button-container {
+  clear: both;
 }
 
 button,
