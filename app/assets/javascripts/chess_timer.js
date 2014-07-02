@@ -1,7 +1,8 @@
 function ChessTimer($elem) {
+  this.maxTime = 1500000;
   this.$elem = $elem;
-  this.time1 = 1500000;
-  this.time2 = 1500000;
+  this.time1 = this.maxTime;
+  this.time2 = this.maxTime;
   this.position = 1;
 
   if (Notification && Notification.permission !== "granted") {
@@ -37,10 +38,20 @@ ChessTimer.prototype.tick = function () {
       clearInterval(this.interval);
 
       if (Notification && Notification.permission === "granted") {
-        new Notification("Pomodoro is up! Good Job! Time for a break.");
+        if (this.time2 == 0) {
+          new Notification("Time is up! Good Job to the both of you!");
+        }
+        else {
+          new Notification("Stop driving! It's time for your pair to take over!");
+        }
       }
       else {
-        alert("time is up" + this.position + this.time1);
+        if (this.time2 == 0) {
+          alert("Time is up! Good Job to the both of you!");
+        }
+        else {
+          alert("Stop driving! It's time for your pair to take over!");
+        }
       }
     }
   }
@@ -52,11 +63,22 @@ ChessTimer.prototype.tick = function () {
     else {
       clearInterval(this.interval);
 
+
       if (Notification && Notification.permission === "granted") {
-        new Notification("Pomodoro is up! Good Job! Time for a break.");
+        if (this.time1 == 0) {
+          new Notification("Time is up! Good Job to the both of you!");
+        }
+        else {
+          new Notification("Stop driving! It's time for your pair to take over!");
+        }
       }
       else {
-        alert("time is up" + this.position + this.time2);
+        if (this.time1 == 0) {
+          alert("Time is up! Good Job to the both of you!");
+        }
+        else {
+          alert("Stop driving! It's time for your pair to take over!");
+        }
       }
     }
   }
@@ -85,8 +107,8 @@ ChessTimer.prototype.switchCount = function (event) {
 ChessTimer.prototype.resetCount = function (event) {
   event.preventDefault();
   clearInterval(this.interval);
-  this.time1 = 1500000;
-  this.time2 = 1500000;
+  this.time1 = this.maxTime;
+  this.time2 = this.maxTime;
   this.displayCount();
   this.$elem.find("[data-button=switch]").replaceWith('<button data-button="start">Start</button>');
 };
