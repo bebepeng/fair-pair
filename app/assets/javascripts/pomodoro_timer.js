@@ -1,6 +1,14 @@
 function PomodoroTimer($elem) {
   this.$elem = $elem;
-  this.time = 1500000;
+  this.time = 3000;
+
+  if (Notification && Notification.permission !== "granted") {
+    Notification.requestPermission(function (status) {
+      if (Notification.permission !== status) {
+        Notification.permission = status;
+      }
+    });
+  }
 
   this.displayCount();
 
@@ -12,15 +20,22 @@ function PomodoroTimer($elem) {
 PomodoroTimer.prototype.displayCount = function () {
   var time = displayTime(this.time);
   this.$elem.find("[data-display=counter]").html(time);
-  console.log(this.time);
 };
 
 PomodoroTimer.prototype.tick = function () {
   if (this.time > 0) {
     this.time -= 1000;
     this.displayCount();
-  }else{
+  }
+  else {
     clearInterval(this.interval);
+
+    if (Notification && Notification.permission === "granted") {
+      new Notification("Pomodoro is up! Good Job! Time for a break.");
+    }
+    else {
+      alert("Pomodoro is up! Good Job! Time for a break.");
+    }
   }
 };
 
