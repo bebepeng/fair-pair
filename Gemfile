@@ -41,9 +41,12 @@ gem 'spring',        group: :development
 group :test, :development do
   gem 'rspec-rails', '~> 3.0.1'
   gem 'capybara', '~> 2.3.0'
+  gem 'selenium-webdriver', '~> 2.42.0'
+  gem 'database_cleaner', '~> 1.3.0'
 end
 
 group :production do
   gem 'rails_12factor', '~> 0.0.2'
 end
 
+gem 'ejs', '~> 1.1.1'
