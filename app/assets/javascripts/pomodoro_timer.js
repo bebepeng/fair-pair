@@ -1,6 +1,6 @@
 function PomodoroTimer($elem) {
   this.$elem = $elem;
-  this.time = 3000;
+  this.time = 1500000;
 
   if (Notification && Notification.permission !== "granted") {
     Notification.requestPermission(function (status) {
