@@ -1,6 +1,9 @@
-function PomodoroTimer($elem) {
+function PomodoroTimer($elem, minutes) {
+  if (parseInt(minutes) != minutes) {
+    minutes = 1500000;
+  }
   this.$elem = $elem;
-  this.time1 = 1500000;
+  this.time = minutes;
 
   if (Notification && Notification.permission !== "granted") {
     Notification.requestPermission(function (status) {
@@ -18,13 +21,13 @@ function PomodoroTimer($elem) {
 }
 
 PomodoroTimer.prototype.displayCount = function () {
-  var time = displayTime(this.time1);
+  var time = displayTime(this.time);
   this.$elem.find("[data-display=counter]").html(time);
 };
 
 PomodoroTimer.prototype.tick = function () {
-  if (this.time1 > 0) {
-    this.time1 -= 1000;
+  if (this.time > 0) {
+    this.time -= 1000;
     this.displayCount();
   }
   else {
@@ -54,6 +57,6 @@ PomodoroTimer.prototype.pauseCount = function (event) {
 PomodoroTimer.prototype.resetCount = function (event) {
   event.preventDefault();
   clearInterval(this.interval);
-  this.time1 = 1500000;
+  this.time = 1500000;
   this.displayCount();
 };

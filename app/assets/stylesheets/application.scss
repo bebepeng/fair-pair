@@ -35,6 +35,9 @@ html {
 
 .timer {
   margin-top: 5%;
+  input[type="number"] {
+    width: 20%;
+  }
 }
 
 .time {
@@ -61,7 +64,7 @@ input[type="submit"] {
   font-size: 80%;
   padding: 1%;
   border-radius: 8px;
-  width: 120px;
+  min-width: 120px;
 }
 
 button:hover, input[type="submit"]:hover {
