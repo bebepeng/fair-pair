@@ -35,15 +35,15 @@ window.TimerDisplay = {
     var timer_data = {};
     timer_data['break'] = event.target["0"].checked;
     timer_data['pair'] = event.target["1"].checked;
-    timer_data['minutes'] = parseInt(event.target["2"].value)*60000;
+    timer_data['millisecs'] = parseInt(event.target["2"].value)*60000;
 
     if(timer_data.break == true){
       $("[data-container=timer]").html('');
-      this.displayPomodoro(timer_data.minutes);
+      this.displayPomodoro(timer_data.millisecs);
     }
     else if (timer_data.pair == true) {
       $("[data-container=timer]").html('');
-      this.displayChess(timer_data.minutes);
+      this.displayChess(timer_data.millisecs);
     }
   }
 

@@ -1,8 +1,8 @@
-function ChessTimer($elem, minutes) {
-  if (parseInt(minutes) != minutes) {
-    minutes = 1500000;
+function ChessTimer($elem, millisecs) {
+  if (parseInt(millisecs) != millisecs) {
+    millisecs = 1500000;
   }
-  this.maxTime = minutes;
+  this.maxTime = millisecs;
   this.$elem = $elem;
   this.time1 = this.maxTime;
   this.time2 = this.maxTime;

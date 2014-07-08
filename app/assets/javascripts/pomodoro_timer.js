@@ -1,9 +1,9 @@
-function PomodoroTimer($elem, minutes) {
-  if (parseInt(minutes) != minutes) {
-    minutes = 1500000;
+function PomodoroTimer($elem, millisecs) {
+  if (parseInt(millisecs) != millisecs) {
+    millisecs = 1500000;
   }
   this.$elem = $elem;
-  this.time = minutes;
+  this.time = millisecs;
 
   if (Notification && Notification.permission !== "granted") {
     Notification.requestPermission(function (status) {
