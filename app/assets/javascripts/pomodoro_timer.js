@@ -1,9 +1,11 @@
-function PomodoroTimer($elem, minutes) {
-  if (parseInt(minutes) != minutes) {
-    minutes = 3000;
+function PomodoroTimer($elem, millisecs) {
+  if (parseInt(millisecs) != millisecs) {
+    millisecs = 3000;
+
   }
+  this.default_time = millisecs;
   this.$elem = $elem;
-  this.time = minutes;
+  this.time = millisecs;
 
   if (Notification && Notification.permission !== "granted") {
     Notification.requestPermission(function (status) {
@@ -57,6 +59,6 @@ PomodoroTimer.prototype.pauseCount = function (event) {
 PomodoroTimer.prototype.resetCount = function (event) {
   event.preventDefault();
   clearInterval(this.interval);
-  this.time = 1500000;
+  this.time = this.default_time;
   this.displayCount();
 };
