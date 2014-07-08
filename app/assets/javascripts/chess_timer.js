@@ -1,6 +1,6 @@
 function ChessTimer($elem, minutes) {
   if (parseInt(minutes) != minutes) {
-    minutes = 1500000;
+    minutes = 3000;
   }
   this.maxTime = minutes;
   this.$elem = $elem;

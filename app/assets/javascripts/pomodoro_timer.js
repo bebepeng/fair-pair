@@ -1,6 +1,6 @@
 function PomodoroTimer($elem, minutes) {
   if (parseInt(minutes) != minutes) {
-    minutes = 1500000;
+    minutes = 3000;
   }
   this.$elem = $elem;
   this.time = minutes;
