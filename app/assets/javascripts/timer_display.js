@@ -1,8 +1,8 @@
 window.TimerDisplay = {
   initialize: function () {
-    $(document).one('click', "[data-behavior=pomodoro]",  this.displayPomodoro.bind(this));
-    $(document).one('click', "[data-behavior=chess]",  this.displayChess.bind(this));
-    $(document).one('click', "[data-behavior=custom]",  this.displayCustom.bind(this));
+    $(document).on('click', "[data-behavior=pomodoro]",  this.displayPomodoro.bind(this));
+    $(document).on('click', "[data-behavior=chess]",  this.displayChess.bind(this));
+    $(document).on('click', "[data-behavior=custom]",  this.displayCustom.bind(this));
     $(document).on('submit', "[data-behavior=create-timer]", this.chooseATimer.bind(this));
   },
 
@@ -11,7 +11,7 @@ window.TimerDisplay = {
     var $html = $(JST['templates/pomodoro']());
     $timerDiv.append($html);
     new PomodoroTimer($timerDiv, minutes);
-    $("[data-container=timer]").append($timerDiv);
+    $("[data-container=timer]").html($timerDiv);
   },
 
   displayChess: function (minutes) {
@@ -19,14 +19,14 @@ window.TimerDisplay = {
     var $html = $(JST['templates/chess']());
     $timerDiv.append($html);
     new ChessTimer($timerDiv, minutes);
-    $("[data-container=timer]").append($timerDiv);
+    $("[data-container=timer]").html($timerDiv);
   },
 
   displayCustom: function () {
     var $timerDiv = $("<div data-content='chess'>");
     var $html = $(JST['templates/custom']());
     $timerDiv.append($html);
-    $("[data-container=timer]").append($timerDiv);
+    $("[data-container=timer]").html($timerDiv);
   },
 
   chooseATimer: function (event) {
