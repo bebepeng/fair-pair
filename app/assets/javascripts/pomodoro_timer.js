@@ -1,5 +1,5 @@
 function PomodoroTimer($elem, millisecs) {
-  if (parseInt(millisecs) != millisecs) {
+  if (parseInt(millisecs) !== millisecs) {
     millisecs = 1500000;
   }
   this.maxTime = millisecs;

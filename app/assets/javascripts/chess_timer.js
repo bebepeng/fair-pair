@@ -1,5 +1,5 @@
 function ChessTimer($elem, millisecs) {
-  if (parseInt(millisecs) != millisecs) {
+  if (parseInt(millisecs) !== millisecs) {
     millisecs = 1500000;
   }
   this.maxTime = millisecs;
@@ -32,7 +32,7 @@ ChessTimer.prototype.displayCount = function () {
 };
 
 ChessTimer.prototype.tick = function () {
-  if (this.position == 1) {
+  if (this.position === 1) {
     if (this.time1 > 0) {
       this.time1 -= 1000;
       this.displayCount();
@@ -65,7 +65,7 @@ ChessTimer.prototype.startCount = function (event) {
 ChessTimer.prototype.switchCount = function (event) {
   event.preventDefault();
 
-  if (this.position == 2) {
+  if (this.position === 2) {
     this.position = 1;
   }
   else {
@@ -87,7 +87,7 @@ ChessTimer.prototype.resetCount = function (event) {
 
 ChessTimer.prototype.displayNotification = function (time) {
   if (Notification && Notification.permission === "granted") {
-    if (time == 0) {
+    if (time === 0) {
       new Notification("Time is up! Good Job to the both of you!");
     }
     else {
@@ -95,7 +95,7 @@ ChessTimer.prototype.displayNotification = function (time) {
     }
   }
   else {
-    if (time == 0) {
+    if (time === 0) {
       alert("Time is up! Good Job to the both of you!");
     }
     else {

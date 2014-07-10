@@ -37,11 +37,11 @@ window.TimerDisplay = {
     timer_data['pair'] = event.target["1"].checked;
     timer_data['millisecs'] = parseInt(event.target["2"].value)*60000;
 
-    if(timer_data.break == true){
+    if(timer_data.break === true){
       $("[data-container=timer]").html('');
       this.displayPomodoro(timer_data.millisecs);
     }
-    else if (timer_data.pair == true) {
+    else if (timer_data.pair === true) {
       $("[data-container=timer]").html('');
       this.displayChess(timer_data.millisecs);
     }
