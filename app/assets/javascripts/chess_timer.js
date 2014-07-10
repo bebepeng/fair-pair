@@ -40,22 +40,7 @@ ChessTimer.prototype.tick = function () {
     else {
       clearInterval(this.interval);
 
-      if (Notification && Notification.permission === "granted") {
-        if (this.time2 == 0) {
-          new Notification("Time is up! Good Job to the both of you!");
-        }
-        else {
-          new Notification("Stop driving! It's time for your pair to take over!");
-        }
-      }
-      else {
-        if (this.time2 == 0) {
-          alert("Time is up! Good Job to the both of you!");
-        }
-        else {
-          alert("Stop driving! It's time for your pair to take over!");
-        }
-      }
+      this.displayNotification(this.time2);
     }
   }
   else {
@@ -66,23 +51,7 @@ ChessTimer.prototype.tick = function () {
     else {
       clearInterval(this.interval);
 
-
-      if (Notification && Notification.permission === "granted") {
-        if (this.time1 == 0) {
-          new Notification("Time is up! Good Job to the both of you!");
-        }
-        else {
-          new Notification("Stop driving! It's time for your pair to take over!");
-        }
-      }
-      else {
-        if (this.time1 == 0) {
-          alert("Time is up! Good Job to the both of you!");
-        }
-        else {
-          alert("Stop driving! It's time for your pair to take over!");
-        }
-      }
+      this.displayNotification(this.time1);
     }
   }
 };
@@ -114,4 +83,23 @@ ChessTimer.prototype.resetCount = function (event) {
   this.time2 = this.maxTime;
   this.displayCount();
   this.$elem.find("[data-button=switch]").replaceWith('<button data-button="start">Start</button>');
+};
+
+ChessTimer.prototype.displayNotification = function (time) {
+  if (Notification && Notification.permission === "granted") {
+    if (time == 0) {
+      new Notification("Time is up! Good Job to the both of you!");
+    }
+    else {
+      new Notification("Stop driving! It's time for your pair to take over!");
+    }
+  }
+  else {
+    if (time == 0) {
+      alert("Time is up! Good Job to the both of you!");
+    }
+    else {
+      alert("Stop driving! It's time for your pair to take over!");
+    }
+  }
 };
