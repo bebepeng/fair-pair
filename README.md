@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/bebepeng/fair-pair.svg?branch=master)](https://travis-ci.org/bebepeng/fair-pair)
+
 # Fair Pair
 
 Fair Pair is a tool to help you solve your pairing issues.
