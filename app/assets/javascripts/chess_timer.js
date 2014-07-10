@@ -8,13 +8,7 @@ function ChessTimer($elem, millisecs) {
   this.time2 = this.maxTime;
   this.position = 1;
 
-  if (Notification && Notification.permission !== "granted") {
-    Notification.requestPermission(function (status) {
-      if (Notification.permission !== status) {
-        Notification.permission = status;
-      }
-    });
-  }
+  NotificationPermissions.askForPermission();
 
   this.displayCount();
 
@@ -86,7 +80,7 @@ ChessTimer.prototype.resetCount = function (event) {
 };
 
 ChessTimer.prototype.displayNotification = function (time) {
-  if (Notification && Notification.permission === "granted") {
+  if (NotificationPermissions.hasPermission) {
     if (time === 0) {
       new Notification("Time is up! Good Job to the both of you!");
     }

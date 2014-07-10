@@ -6,13 +6,7 @@ function PomodoroTimer($elem, millisecs) {
   this.$elem = $elem;
   this.time = millisecs;
 
-  if (Notification && Notification.permission !== "granted") {
-    Notification.requestPermission(function (status) {
-      if (Notification.permission !== status) {
-        Notification.permission = status;
-      }
-    });
-  }
+  NotificationPermissions.askForPermission();
 
   this.displayCount();
 
@@ -34,7 +28,7 @@ PomodoroTimer.prototype.tick = function () {
   else {
     clearInterval(this.interval);
 
-    if (Notification && Notification.permission === "granted") {
+    if (NotificationPermissions.hasPermission) {
       new Notification("Pomodoro is up! Good Job! Time for a break.");
     }
     else {
