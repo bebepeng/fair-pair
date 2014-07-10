@@ -33,9 +33,9 @@ window.TimerDisplay = {
     event.preventDefault();
 
     var timer_data = {};
-    timer_data['break'] = event.target["0"].checked;
-    timer_data['pair'] = event.target["1"].checked;
-    timer_data['millisecs'] = parseInt(event.target["2"].value)*60000;
+    timer_data.break = event.target["0"].checked;
+    timer_data.pair = event.target["1"].checked;
+    timer_data.millisecs = parseInt(event.target["2"].value)*60000;
 
     if(timer_data.break === true){
       $("[data-container=timer]").html('');
