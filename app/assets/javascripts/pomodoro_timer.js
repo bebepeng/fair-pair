@@ -29,7 +29,7 @@ PomodoroTimer.prototype.tick = function () {
     clearInterval(this.interval);
 
     if (NotificationPermissions.hasPermission) {
-      new Notification("Pomodoro is up! Good Job! Time for a break.", {icon: PomoPic});
+      new Notification("Pomodoro is up! Good Job! Time for a break.", {icon: PomoPic, body: 'FairPair Notification'});
     }
     else {
       alert("Pomodoro is up! Good Job! Time for a break.");

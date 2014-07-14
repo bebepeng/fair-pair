@@ -82,10 +82,10 @@ ChessTimer.prototype.resetCount = function (event) {
 ChessTimer.prototype.displayNotification = function (time) {
   if (NotificationPermissions.hasPermission) {
     if (time === 0) {
-      new Notification("Time is up! Good Job to the both of you!", {icon: ChessPic});
+      new Notification("Time is up! Good Job to the both of you!", {icon: ChessPic, body: 'FairPair Notification'});
     }
     else {
-      new Notification("Stop driving! It's time for your pair to take over!", {icon: ChessPic});
+      new Notification("Stop driving! It's time for your pair to take over!", {icon: ChessPic,  body: 'FairPair Notification'});
     }
   }
   else {
