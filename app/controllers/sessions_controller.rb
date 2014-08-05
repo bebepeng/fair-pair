@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       login(user)
       redirect_to root_path, notice: "Welcome back, #{user.name}!"
     else
-      redirect_to new_sessions_path, notice: 'Invalid User/Password Combination'
+      redirect_to new_sessions_path, notice: 'Invalid Email/Password Combination'
     end
   end
 
