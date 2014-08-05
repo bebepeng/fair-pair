@@ -36,4 +36,14 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
 
   config.order = "random"
+
+
+  VCR.configure do |c|
+    #c.allow_http_connections_when_no_cassette = true
+    c.cassette_library_dir = 'fixtures/vcr_cassettes'
+    c.hook_into :webmock
+
+    c.filter_sensitive_data('<GITHUB_USERNAME>') {ENV['GITHUB_USERNAME']}
+    c.filter_sensitive_data('<GITHUB_PASSWORD>') {ENV['GITHUB_PASSWORD']}
+  end
 end

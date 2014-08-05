@@ -43,14 +43,18 @@ group :test, :development do
   gem 'capybara', '~> 2.3.0'
   gem 'selenium-webdriver', '~> 2.42.0'
   gem 'database_cleaner', '~> 1.3.0'
+  gem 'dotenv-rails', '~> 0.11.1'
 end
 
 group :test do
   gem 'launchy', '~> 2.4.2'
+  gem 'vcr', '~> 2.9.0'
+  gem 'webmock', '~> 1.17.4'
 end
 
 group :production do
   gem 'rails_12factor', '~> 0.0.2'
 end
 
+gem 'faraday', '~> 0.9.0'
 gem 'ejs', '~> 1.1.1'
