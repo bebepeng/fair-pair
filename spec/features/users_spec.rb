@@ -57,8 +57,5 @@ feature 'Users' do
 
     expect(page).to have_no_content 'Welcome back'
     expect(page).to have_content 'Invalid Email/Password Combination'
-
   end
-
-  scenario 'Users can sign in'
 end
