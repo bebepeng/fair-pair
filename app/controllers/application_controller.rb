@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     session[:id]
   end
 
+  def logout
+    session[:id] = nil
+  end
+
   helper_method :logged_in?
 
   def logged_in?
