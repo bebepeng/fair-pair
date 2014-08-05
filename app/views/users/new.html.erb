@@ -1,0 +1,18 @@
+<h1>Sign Up</h1>
+<div class="form">
+  <%= form_for @user do |f| %>
+    <div class="form-row">
+      <div class="form-label"><%= f.label :name %></div>
+      <div class="form-field"><%= f.text_field :name %></div>
+    </div>
+    <div class="form-row">
+      <div class="form-label"><%= f.label :email %></div>
+      <div class="form-field"><%= f.text_field :email %></div>
+    </div>
+    <div class="form-row">
+      <div class="form-label"><%= f.label :password %></div>
+      <div class="form-field"><%= f.password_field :password %></div>
+    </div>
+    <div class="form-submit"><%= f.submit 'Submit' %></div>
+  <% end %>
+</div>

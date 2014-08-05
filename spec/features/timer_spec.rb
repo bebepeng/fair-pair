@@ -65,8 +65,6 @@ feature 'Pairing Timers', :js => true do
   scenario 'User can choose a pair timer' do
     visit timers_path
     click_on 'Custom Timer'
-    puts page.body
-    # puts page.evaluate_script("function(){return $('some selector').html()}();")
     choose 'Pair Timer'
     fill_in 'Time Limit:', :with => '5'
     click_on 'Create Timer'

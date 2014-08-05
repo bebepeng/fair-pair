@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_tree ./vendor
+ *= require_tree ./modules
  *= require_tree .
  *= require_self
  */
@@ -29,34 +30,6 @@ body{
   margin: 2%;
   padding: 1%;
   clear: both;
-}
-
-.timer-links {
-  a {
-    margin: 1%;
-  }
-}
-
-.timer {
-  margin-top: 5%;
-  input[type="number"] {
-    width: 20%;
-  }
-}
-
-.time {
-  font-size: 300%;
-  font-family: 'Oswald', sans-serif;
-  border: 2px solid #b7b7b7;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  border-radius: 4px;
-  background-color: white;
-  margin: 2%;
-}
-
-.chess {
-  float: left;
-  min-width: 45%;
 }
 
 .button-container {
@@ -114,4 +87,14 @@ header {
   a {
     color: white;
   }
+}
+
+.flash_messages {
+  font-family: 'Roboto', sans-serif;
+  border-radius: 1em;
+  background-color: rgba(255, 163, 0, 0.35);
+  padding: 1% 0%;
+  min-width: 100%;
+  color: white;
+  text-align: center;
 }
