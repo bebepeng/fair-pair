@@ -8,13 +8,13 @@
     outline: gray solid 2px;
     background-color: whitesmoke;
     font-family: Lato, sans-serif;
-    .sha, .date, .action {
+    .sha, .date {
       font-size: 60%;
     }
     .action {
       float: right;
     }
-    .message {
+    .message, .action {
       font-size: 75%;
     }
   }
