@@ -10,7 +10,7 @@ class ReposController < LoginfilterController
       repo.save
       redirect_to repos_path, notice: 'Repo successfully Added'
     else
-      redirect_to repos_path, notice: 'invalid repo'
+      redirect_to repos_path, notice: 'Invalid Repo'
     end
   end
 end
