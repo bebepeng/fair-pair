@@ -8,7 +8,7 @@ feature 'GitHub Repo Commit Tracker' do
     fill_in 'Email', :with => 'sam@example.com'
     fill_in 'Password', :with => 'password'
     click_button 'Sign In'
-    VCR.use_cassette('githubapi/commits') do
+    VCR.use_cassette('githubapi/commits/feature') do
       click_on 'GitHub Repos'
       within '.form' do
         fill_in 'GitHub Repo', :with => 'bebepeng/single-page-app'

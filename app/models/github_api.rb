@@ -15,6 +15,10 @@ class GithubApi
     commits.first
   end
 
+  def valid?
+    !commits.include?("documentation_url")
+  end
+
   private
 
   def connect(url)
