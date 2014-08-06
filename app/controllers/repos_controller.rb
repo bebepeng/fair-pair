@@ -9,7 +9,7 @@ class ReposController < LoginfilterController
     if repo.save
       redirect_to repos_path, notice: 'Repo successfully Added'
     else
-      render :show, notice: 'invalid repo'
+      redirect_to repos_path, notice: 'invalid repo'
     end
   end
 end

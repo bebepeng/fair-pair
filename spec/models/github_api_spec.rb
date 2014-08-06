@@ -10,4 +10,13 @@ describe GithubApi do
       expect(github_commit).to eq response
     end
   end
+  it 'returns something for a 404' do
+    VCR.use_cassette('githubapi/commits/fail') do
+      github = GithubApi.new('bebepeng', 'stuffIdonthave')
+      github_commit = github.commits
+
+      response = {"message"=>"Not Found", "documentation_url"=>"https://developer.github.com/v3"}
+      expect(github_commit).to eq response
+    end
+  end
 end

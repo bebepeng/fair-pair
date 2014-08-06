@@ -37,7 +37,6 @@ RSpec.configure do |config|
 
   config.order = "random"
 
-
   VCR.configure do |c|
     #c.allow_http_connections_when_no_cassette = true
     c.cassette_library_dir = 'fixtures/vcr_cassettes'
@@ -45,5 +44,6 @@ RSpec.configure do |config|
 
     c.filter_sensitive_data('<GITHUB_USERNAME>') {ENV['GITHUB_USERNAME']}
     c.filter_sensitive_data('<GITHUB_PASSWORD>') {ENV['GITHUB_PASSWORD']}
+    c.ignore_localhost = true
   end
 end
