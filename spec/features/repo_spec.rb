@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'GitHub Repo Commit Tracker' do
-  scenario 'Users can add a repo' do
+  scenario 'Users can add a repo and delete it' do
     User.create!(:name => 'Sam', :email => 'sam@example.com', :password => 'password')
 
     visit new_sessions_path
@@ -13,11 +13,21 @@ feature 'GitHub Repo Commit Tracker' do
       within '.form' do
         fill_in 'GitHub Repo', :with => 'bebepeng/single-page-app'
         click_on 'Add Repo'
+
+        fill_in 'GitHub Repo', :with => 'bebepeng/listen_to'
+        click_on 'Add Repo'
       end
 
       within '#repos-div' do
         expect(page).to have_content 'bebepeng/single-page-app'
+        expect(page).to have_content 'bebepeng/listen_to'
+
+        page.all('.action').last.click
       end
+
+        expect(page).to have_no_content 'bebepeng/listen_to'
+        expect(page).to have_content 'Repo Successfully Removed'
+        expect(page).to have_content 'bebepeng/single-page-app'
     end
   end
 

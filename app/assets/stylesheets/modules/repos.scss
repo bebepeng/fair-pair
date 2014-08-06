@@ -8,10 +8,11 @@
     outline: gray solid 2px;
     background-color: whitesmoke;
     font-family: Lato, sans-serif;
-    .sha, .date {
+    .sha, .date, .action {
       font-size: 60%;
     }
-    .author {
+    .action {
+      float: right;
     }
     .message {
       font-size: 75%;
