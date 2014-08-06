@@ -29,6 +29,10 @@ Please follow the steps below to get this site set up for local development.
 1. `bundle` to install gems
 1. `rake db:create db:migrate db:seed` to set up your local database
 1. `RAILS_ENV=test rake db:migrate` to set up your test database
+1. Create a .env file using .env.example as a guide
 1. `rspec` to run specs
 1. `rails s` to run your localserver:3000
 
+## Gotchas
+Your Tracker Github Password is sensitive information. We have configured VCR to not record this info, and your .env file is in your .gitingore file. 
+Any additional features requiring sensitive data that you add and test with VCR should be configured similarly.
