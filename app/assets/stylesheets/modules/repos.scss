@@ -11,9 +11,10 @@
     .sha, .date {
       font-size: 60%;
     }
-    .author {
+    .action {
+      float: right;
     }
-    .message {
+    .message, .action {
       font-size: 75%;
     }
   }

@@ -1,0 +1,32 @@
+<div class="form">
+  <%= form_for @repo do |f| %>
+    <div class="form-row">
+      <div class="form-label"><%= f.label :owner, 'GitHub Repo' %></div>
+      <div class="form-field"><%= f.text_field :owner, :placeholder => "ex) repo_owner/repo_name" %></div>
+    </div>
+    <div class="form-submit"><%= f.submit 'Add Repo' %></div>
+  <% end %>
+</div>
+
+<div id="repos-div">
+  <h4>Most Recent Commits</h4>
+  <% @repos.each do |repo| %>
+    <div class="repo">
+      <%= link_to 'remove', repo_path(repo), :method => :delete, :class => 'action' %>
+      <% api = GithubApi.new(repo.owner, repo.name)  %>
+      <h3><a href="http://github.com/<%= "#{api.owner}/#{api.repo}" %>"><%= "#{api.owner}/#{api.repo}" %></a></h3>
+
+      <div class="recent-commit">
+
+        <div class="author"><strong><%= api.recent_commit["commit"]["author"]["name"] %></strong>
+          < <%= api.recent_commit["commit"]["author"]["email"] %> >
+        </div>
+        <div class="sha">sha: <%= api.recent_commit["sha"] %> </div>
+        <div class="date">timestamp: <%= api.recent_commit["commit"]["author"]["date"] %></div>
+        <div class="message">
+          <blockquote><%= api.recent_commit["commit"]["message"] %></blockquote>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

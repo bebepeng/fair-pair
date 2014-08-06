@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Wed, 06 Aug 2014 00:25:35 GMT
+      - Wed, 06 Aug 2014 19:53:08 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -31,9 +31,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4974'
+      - '4983'
       X-Ratelimit-Reset:
-      - '1407287002'
+      - '1407357064'
       Cache-Control:
       - private, max-age=60, s-maxage=60
       Last-Modified:
@@ -59,13 +59,13 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Github-Request-Id:
-      - 43B016F1:4A7E:205D3F2:53E175FF
+      - 43B016F1:1E52:1F54E7C:53E287A4
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains
       X-Content-Type-Options:
       - nosniff
       X-Served-By:
-      - 6d7de9e645814cac34ea2a8d72ba3141
+      - 62a1303ae95931e56e387e87d354bb24
     body:
       encoding: UTF-8
       string: '[{"sha":"91251e4b5204b5d2dc7a2e9b120d7ded8d90840b","commit":{"author":{"name":"Bebe
@@ -95,5 +95,5 @@ http_interactions:
         Dean","email":"jeff@galvanize.it","date":"2014-06-09T21:59:59Z"},"message":"initial
         commit with rails new","tree":{"sha":"c5ce4a362bcde2bbd7453d827efa6f7ca9d5ed5b","url":"https://api.github.com/repos/bebepeng/single-page-app/git/trees/c5ce4a362bcde2bbd7453d827efa6f7ca9d5ed5b"},"url":"https://api.github.com/repos/bebepeng/single-page-app/git/commits/ef985ad3f19a50bef5ff3b95bbad1592d0a9aa73","comment_count":0},"url":"https://api.github.com/repos/bebepeng/single-page-app/commits/ef985ad3f19a50bef5ff3b95bbad1592d0a9aa73","html_url":"https://github.com/bebepeng/single-page-app/commit/ef985ad3f19a50bef5ff3b95bbad1592d0a9aa73","comments_url":"https://api.github.com/repos/bebepeng/single-page-app/commits/ef985ad3f19a50bef5ff3b95bbad1592d0a9aa73/comments","author":{"login":"jeffdean-galvanize","id":6194543,"avatar_url":"https://avatars.githubusercontent.com/u/6194543?v=2","gravatar_id":"5bc6205601da72bcdf15096201c46c4e","url":"https://api.github.com/users/jeffdean-galvanize","html_url":"https://github.com/jeffdean-galvanize","followers_url":"https://api.github.com/users/jeffdean-galvanize/followers","following_url":"https://api.github.com/users/jeffdean-galvanize/following{/other_user}","gists_url":"https://api.github.com/users/jeffdean-galvanize/gists{/gist_id}","starred_url":"https://api.github.com/users/jeffdean-galvanize/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/jeffdean-galvanize/subscriptions","organizations_url":"https://api.github.com/users/jeffdean-galvanize/orgs","repos_url":"https://api.github.com/users/jeffdean-galvanize/repos","events_url":"https://api.github.com/users/jeffdean-galvanize/events{/privacy}","received_events_url":"https://api.github.com/users/jeffdean-galvanize/received_events","type":"User","site_admin":false},"committer":{"login":"jeffdean-galvanize","id":6194543,"avatar_url":"https://avatars.githubusercontent.com/u/6194543?v=2","gravatar_id":"5bc6205601da72bcdf15096201c46c4e","url":"https://api.github.com/users/jeffdean-galvanize","html_url":"https://github.com/jeffdean-galvanize","followers_url":"https://api.github.com/users/jeffdean-galvanize/followers","following_url":"https://api.github.com/users/jeffdean-galvanize/following{/other_user}","gists_url":"https://api.github.com/users/jeffdean-galvanize/gists{/gist_id}","starred_url":"https://api.github.com/users/jeffdean-galvanize/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/jeffdean-galvanize/subscriptions","organizations_url":"https://api.github.com/users/jeffdean-galvanize/orgs","repos_url":"https://api.github.com/users/jeffdean-galvanize/repos","events_url":"https://api.github.com/users/jeffdean-galvanize/events{/privacy}","received_events_url":"https://api.github.com/users/jeffdean-galvanize/received_events","type":"User","site_admin":false},"parents":[]}]'
     http_version: 
-  recorded_at: Wed, 06 Aug 2014 00:25:35 GMT
+  recorded_at: Wed, 06 Aug 2014 19:53:08 GMT
 recorded_with: VCR 2.9.0
