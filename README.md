@@ -23,6 +23,7 @@ Select a timer
 * A Pomodoro is a 25 minute time frame. Using the Pomodoro timer is a good way to set an even interval for taking breaks.
 * The Chess Clock is a quantitative way of dividing up work, or driving time. Press 'switch' to  change who's clock is counting down.
 * Custom timers should be used when you would like to use an interval besides 25 minutes.
+
 Login to use the GitHub Commit Tracking feature  
 * By adding your public repo, you can easily find out who made the last commit. 
 
