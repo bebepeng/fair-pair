@@ -1,8 +1,10 @@
 function PomodoroTimer($elem, millisecs) {
-  if (parseInt(millisecs) !== millisecs) {
+
+  if (parseInt(millisecs) != millisecs) {
     millisecs = 3000;
+
   }
-  this.maxTime = millisecs;
+  this.default_time = millisecs;
   this.$elem = $elem;
   this.time = millisecs;
 
@@ -52,6 +54,7 @@ PomodoroTimer.prototype.pauseCount = function (event) {
 PomodoroTimer.prototype.resetCount = function (event) {
   event.preventDefault();
   clearInterval(this.interval);
-  this.time = this.maxTime;
+
+  this.time = this.default_time;
   this.displayCount();
 };

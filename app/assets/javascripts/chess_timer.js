@@ -1,5 +1,6 @@
 function ChessTimer($elem, millisecs) {
-  if (parseInt(millisecs) !== millisecs) {
+
+  if (parseInt(millisecs) != millisecs) {
     millisecs = 3000;
   }
   this.maxTime = millisecs;
@@ -85,7 +86,7 @@ ChessTimer.prototype.displayNotification = function (time) {
       new Notification("Time is up! Good Job to the both of you!", {icon: ChessPic, body: 'FairPair Notification'});
     }
     else {
-      new Notification("Stop driving! It's time for your pair to take over!", {icon: ChessPic,  body: 'FairPair Notification'});
+      new Notification("Stop driving! It's time for your pair to take over!", {icon: ChessPic, body: 'FairPair Notification'});
     }
   }
   else {
