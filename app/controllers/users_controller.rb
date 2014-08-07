@@ -5,9 +5,12 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    user.save
-    login(user)
-    redirect_to root_path, :notice => "Welcome, #{user.name}!"
+    if user.save
+      login(user)
+      redirect_to root_path, :notice => "Welcome, #{user.name}!"
+    else
+      redirect_to new_user_path, :notice => 'User already exists'
+    end
   end
 
   private

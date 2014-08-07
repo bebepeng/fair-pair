@@ -58,4 +58,16 @@ feature 'Users' do
     expect(page).to have_no_content 'Welcome back'
     expect(page).to have_content 'Invalid Email/Password Combination'
   end
+
+  scenario 'Users cannot sign up with previously registered email' do
+    User.create!(:name => 'Sam', :email => 'sam@example.com', :password => 'password')
+    visit root_path
+    click_on 'Sign Up'
+
+    fill_in 'Name', :with => 'Sam'
+    fill_in 'Email', :with => 'sam@example.com'
+    fill_in 'Password', :with => 'password'
+    click_on 'Submit'
+    expect(page).to have_content 'User already exists'
+  end
 end
